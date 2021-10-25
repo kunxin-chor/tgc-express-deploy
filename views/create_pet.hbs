@@ -1,0 +1,34 @@
+{{#extends 'base'}}
+
+{{#block 'content'}}
+<h1>Creating a New Pet</h1>
+
+{{#if errors}}
+    <div class="alert alert-danger">
+        <ul>
+            {{#each errors}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </div>
+{{/if}}
+
+<form method="POST" id="create-pet">
+    <div>
+        <label>Pet Name</label>
+        <input type="text" class="form-control" name="petName"/>
+    </div> 
+    <div>
+        <label>Category</label>
+        <input type="text" class="form-control" name="category"/>
+    </div>
+    <input type="submit" value="Create New Pet" class="btn btn-primary my-3"/>
+</form>
+{{/block}}
+
+{{#block js}}
+<script src="/validate_create_pet.js"></script>
+{{/block}}
+
+
+{{/extends}}
